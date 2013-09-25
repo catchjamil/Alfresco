@@ -8,7 +8,7 @@
 	<config evaluator="node-type" condition="sd:development">
 		<property-sheet>
 		   <show-association name="sd:relatedDocuments"/>
-			<show-property name="sd:name" />
+			<show-property name="sd:owner" />
 		</property-sheet>
 	</config>
 
@@ -20,8 +20,8 @@
 
 	<config evaluator="aspect-name" condition="sd:common">
 		<property-sheet>
-			<show-property name="sd:siteName" />
-			<show-property name="sd:uploadedDate" />
+			<show-property name="sd:reviewer" />
+			<show-property name="sd:reviewerDate" />
 			<show-property name="sd:user" />
 		</property-sheet>
 	</config>

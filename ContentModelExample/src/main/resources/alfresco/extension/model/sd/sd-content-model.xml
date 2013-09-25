@@ -31,7 +31,7 @@
 			<title>Development</title>
 			<parent>cm:content</parent>
 			<properties>
-				<property name="sd:name">
+				<property name="sd:owner">
 					<type>d:text</type>
 				</property>
 			</properties>
@@ -51,8 +51,6 @@
 				</association>
 			</associations>
 
-
-
 			<mandatory-aspects>
 				<aspect>sd:common</aspect>
 			</mandatory-aspects>
@@ -65,10 +63,10 @@
 			<title>Common</title>
 			<properties>
 
-				<property name="sd:siteName">
+				<property name="sd:reviewer">
 					<type>d:text</type>
 				</property>
-				<property name="sd:uploadedDate">
+				<property name="sd:reviewDate">
 					<type>d:datetime</type>
 				</property>
 
