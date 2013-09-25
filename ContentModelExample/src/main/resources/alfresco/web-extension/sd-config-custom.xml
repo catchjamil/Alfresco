@@ -7,6 +7,7 @@
 
 	<config evaluator="node-type" condition="sd:development">
 		<property-sheet>
+		   <show-association name="sd:relatedDocuments"/>
 			<show-property name="sd:name" />
 		</property-sheet>
 	</config>
