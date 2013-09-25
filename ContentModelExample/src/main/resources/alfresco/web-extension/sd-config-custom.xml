@@ -1,0 +1,28 @@
+<alfresco-config>
+	<config evaluator="string-compare" condition="Content Wizards">
+		<content-types>
+			<type name="sd:development" />
+		</content-types>
+	</config>
+
+	<config evaluator="node-type" condition="sd:development">
+		<property-sheet>
+			<show-property name="sd:name" />
+		</property-sheet>
+	</config>
+
+	<config evaluator="string-compare" condition="Action Wizards">
+		<aspects>
+			<aspect name="sd:common" />
+		</aspects>
+	</config>
+
+	<config evaluator="aspect-name" condition="sd:common">
+		<property-sheet>
+			<show-property name="sd:siteName" />
+			<show-property name="sd:uploadedDate" />
+			<show-property name="sd:user" />
+		</property-sheet>
+	</config>
+</alfresco-config> 
+         

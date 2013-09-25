@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+
+<beans>
+
+	<!-- Registration of new models -->
+	<bean id="example.dictionaryBootstrap" parent="dictionaryModelBootstrap"
+		depends-on="dictionaryBootstrap">
+		<property name="models">
+			<list>
+				<value>alfresco/extension/model/sd/sd-content-model.xml</value>
+			</list>
+		</property>
+
+		<property name="labels">
+			<list>
+				<value>alfresco/extension/model/sd/sd-content</value>
+			</list>
+		</property>
+
+	</bean>
+
+
+	<!-- Bootstraps the Web client configuration -->
+	<bean id="sd.extension.webClientBootstrap" class="org.alfresco.web.config.WebClientConfigBootstrap"
+		init-method="init">
+		<property name="configs">
+			<list>
+				<value>classpath:alfresco/web-extension/sd-config-custom.xml</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

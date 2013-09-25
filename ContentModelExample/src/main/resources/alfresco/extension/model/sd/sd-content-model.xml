@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Definition of new Model -->
+<!-- The important part here is the name - Note: the use of the sd: namespace 
+	which is defined further on in the document -->
+<model name="sd:sdcontentmodel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+	<!-- Optional meta-data about the model -->
+	<description>SD Content Model</description>
+	<author>Mohammad Jamil Ahmed</author>
+	<version>1.0</version>
+
+	<!-- Imports are required to allow references to definitions in other models -->
+	<imports>
+		<!-- Import Alfresco Dictionary Definitions -->
+		<import uri="http://www.alfresco.org/model/dictionary/1.0"
+			prefix="d" />
+		<!-- Import Alfresco Content Domain Model Definitions -->
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+	</imports>
+
+	<!-- Introduction of new namespaces defined by this model -->
+	<!-- NOTE: The following namespace my.new.model should be changed to reflect 
+		your own namespace -->
+	<namespaces>
+		<namespace uri="sd.content.model" prefix="sd" />
+	</namespaces>
+
+	<types>
+		<!-- Definition of new Content Type: development -->
+		<type name="sd:development">
+			<title>Development</title>
+			<parent>cm:content</parent>
+			<properties>
+				<property name="sd:name">
+					<type>d:text</type>
+				</property>
+			</properties>
+			<mandatory-aspects>
+				<aspect>sd:common</aspect>
+			</mandatory-aspects>
+
+		</type>
+	</types>
+
+	<aspects>
+		<aspect name="sd:common">
+			<title>Common</title>
+			<properties>
+
+				<property name="sd:siteName">
+					<type>d:text</type>
+				</property>
+				<property name="sd:uploadedDate">
+					<type>d:datetime</type>
+				</property>
+
+				<property name="sd:user">
+					<type>d:text</type>
+					<default>User1</default>
+					<constraints>
+						<constraint name="sd:userList" type="LIST">
+							<parameter name="allowedValues">
+								<list>
+									<value>User1</value>
+									<value>User2</value>
+									<value>User3</value>
+								</list>
+							</parameter>
+							<parameter name="caseSensitive">
+								<value>true</value>
+							</parameter>
+						</constraint>
+					</constraints>
+				</property>
+			</properties>
+		</aspect>
+	</aspects>
+
+</model>
