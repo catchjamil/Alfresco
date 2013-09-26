@@ -1,5 +1,15 @@
 <alfresco-config>
-	 <config evaluator="node-type" condition="sd:development">
+
+
+<config evaluator="string-compare" condition="DocumentLibrary">
+	<types>
+		<type name="cm:content">
+				<subtype name="sd:development" />
+			</type>
+		</types>
+	</config>
+
+<config evaluator="node-type" condition="sd:development">
     <forms>
        <form>
           <field-visibility>
@@ -24,12 +34,16 @@
            
           </field-visibility>
           <appearance>
-             <field id="sd:relatedDocuments" label="Related Docs"/>
+             <field id="sd:relatedDocuments" label="Related Docs">
+			 <control>
+			 <control-param name="showTargetLink">true</control-param>
+		     </control>
+			 </field>
+			 
              <field id="sd:owner" label="Owner"/>
           </appearance>
        </form>
     </forms>
  </config>
-	
 </alfresco-config> 
          
