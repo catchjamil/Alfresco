@@ -8,7 +8,7 @@ public class SendEmail {
 
     private static String USER_NAME = "username";  // GMail user name (just the part before "@gmail.com")
     private static String PASSWORD = "passoword"; // GMail password
-    private static String RECIPIENT = "senderemail@gmail.com";
+    private static String RECIPIENT = "recieveremail@gmail.com";
 
     public static void main(String[] args) {
         String from = USER_NAME;
